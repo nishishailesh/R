@@ -1,0 +1,8 @@
+options(help_type = "html")
+library(MASS)
+#install.packages("fit.models")
+library(fit.models)
+d5=read.csv("d5.csv")
+View(d5)
+myfit= fit.models(c("rlm", "lm"), income ~ ., data = d5)
+summary(myfit)
