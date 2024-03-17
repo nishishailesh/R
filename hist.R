@@ -1,0 +1,16 @@
+cr=read.csv("cr.csv")
+head(cr)
+cr2=na.omit(cr)
+cr2
+cr3=data.frame(as.numeric(cr2$result))
+cr4=na.omit(cr3)
+colnames(cr4)=c("result")
+options(help_type="html")
+h=hist(cr4$result,breaks=seq(-1,112,0.1),xlim=c(0,5))
+length(h$breaks)
+length(h$counts)
+xy=data.frame(h$breaks[1:1130],h$counts)
+xy=data.frame(h$breaks[1:1130],h$counts)
+head(xy)
+lines(xy)
+
